@@ -29,8 +29,6 @@ const Chat = ({room_name}) => {
     },[])
 
     useEffect(() => {
-        // websocketProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-        // const socketURL = `${websocketProtocol}://${windows.location.host}/ws/messages/${room_name}/`;
         const socketURL = `wss://nuxlink-chat.onrender.com/ws/messages/${room_name}/`;
         const socket = new WebSocket(socketURL)
 
