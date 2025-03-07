@@ -56,7 +56,8 @@ const Chat = ({room_name}) => {
 	}, [socket])
 
     const sendMessage = () => {
-        // if (socket && mess) {
+        if (socket && mess) {
+		console.log("Sending Message": mess)
         //     socket.send(
         //         JSON.stringify({
         //             message: mess,
@@ -65,8 +66,7 @@ const Chat = ({room_name}) => {
         //         })
         //     );
         //     setMessage("")
-        // }
-	console.log("Sending Message": mess)
+        }
     }
 
     return (
