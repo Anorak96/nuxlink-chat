@@ -1,6 +1,6 @@
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Index from './pages/Index'
@@ -11,8 +11,8 @@ import { AuthProvider } from './pages/AuthContext'
 function App() {
   
     return (
-		<AuthProvider>
-			<BrowserRouter>
+		<Router>
+			<AuthProvider>
 				<Routes>
 					<Route path='/' element={<Home />}>
 						<Route index element={<Index />} />
@@ -20,8 +20,8 @@ function App() {
 						<Route path='/login' element={<Login />} />
 					</Route>
 				</Routes>
-			</BrowserRouter>
-		</AuthProvider>
+			</AuthProvider>
+		</Router>
     )
 }
 
