@@ -10,19 +10,23 @@ const login = () => {
 	const {setAuthenticated} = useContext(AuthContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+	const [loading, setLoading] = useState(false)
     
     const userInfo = {email, password}
 
     function handlesubmit(e){
+		setLoading(true)
         e.preventDefault()
         api.post('api/auth/login', userInfo)
         .then(res => {
             localStorage.setItem("access", res.data.access)
             localStorage.setItem("refresh", res.data.refresh)
 			setAuthenticated(true)
+			setLoading(false)
             navigate('/')
         })
         .catch(err => {
+			setLoading(false)
             console.log(err.message);
         })
     }

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import api from '../api'
 import styles from './ChatPage.module.css'
-import NavBar from './NavBar'
 import Sidebar from './Sidebar'
 import { useParams } from 'react-router-dom'
 import Chat from './Chat'

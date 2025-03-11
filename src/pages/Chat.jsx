@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import api from '../api'
 import Message from './Message'
 import styles from './ChatPage.module.css'
@@ -16,7 +16,7 @@ const Chat = ({uuid}) => {
         api.get(`api/chat/room/${uuid}/messages`)
 		.then(res => {
             setChats(res.data)
-            console.log("Chats", res.data);
+            // console.log("Chats", res.data);
 		})
 		.catch(err => {
 			console.log(err.message);
@@ -27,7 +27,7 @@ const Chat = ({uuid}) => {
         
         api.get(`api/employee/dashboard/${decoded.email}`)
         .then(res => {
-            console.log("Employee", res.data);  
+            // console.log("Employee", res.data);  
             setUser(res.data)
             setSender(res.data.account)
 		})
@@ -49,7 +49,7 @@ const Chat = ({uuid}) => {
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
-            console.log("receiving data", data);
+            // console.log("receiving data", data);
             setChats((prevMessages) => [...prevMessages, data]);
         }
 
