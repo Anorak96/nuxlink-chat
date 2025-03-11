@@ -39,7 +39,7 @@ const Chat = ({uuid}) => {
 
     useEffect(() => {
         const websocketProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-        const socketURL = `${websocketProtocol}://${api.defaults.websocket}/ws/chat/${uuid}/`;
+        const socketURL = `${websocketProtocol}://nuxlink.onrender.com/ws/chat/${uuid}/`;
         const socket = new WebSocket(socketURL)
         setSocket(socket)
             
