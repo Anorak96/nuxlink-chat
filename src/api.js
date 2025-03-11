@@ -2,8 +2,8 @@ import axios from "axios"
 import { jwtDecode } from "jwt-decode"
 
 const api = axios.create({
-    baseURL: "https://nuxlink.onrender.com/",
-    websocket: "wss://nuxlink.onrender.com/"
+    baseURL: "https://nuxlink.onrender.com",
+    websocket: "nuxlink.onrender.com"
 })
 
 api.interceptors.request.use(
