@@ -13,7 +13,7 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand href="/">Nuxlink</Navbar.Brand>
                 <Nav className="me-auto">
-                    {Authenticated ? <Nav.Link href="#link">Logout</Nav.Link> : <Nav.Link href="/login">Login</Nav.Link>}
+                    {Authenticated ? <Nav.Link href="#link">Logout</Nav.Link> : <Nav.Link href="/#/login">Login</Nav.Link>}
                 </Nav>
             </Container>
         </Navbar>
